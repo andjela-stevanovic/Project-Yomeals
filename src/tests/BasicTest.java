@@ -18,6 +18,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
+import pages.CartSummeryPage;
+import pages.LocationPopupPage;
+import pages.LoginPage;
+import pages.MealPage;
+import pages.NotificationSystemPage;
+
 public abstract class BasicTest {
 	
 	protected WebDriver driver;
@@ -35,6 +41,7 @@ public abstract class BasicTest {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		this.waiter = new WebDriverWait(driver, 30);
+		this.js = (JavascriptExecutor)driver;
 	}
 	
 	@AfterMethod
