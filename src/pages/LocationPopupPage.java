@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LocationPopupPage extends BasicPage{
@@ -40,11 +41,11 @@ public class LocationPopupPage extends BasicPage{
 		this.getSelectLocation().click();
 	}
 	
-	public void setLocation(String locationName) {
-		js = (JavascriptExecutor)driver;
+	public void setLocation(String locationName) throws InterruptedException {
 		this.getKeyword().click();
 		String dataValue = this.getLocationItem(locationName).getAttribute("data-value");
-		js.executeScript("arguments[0].value=arguments[1]", this.getLocationInput(), dataValue);
+		js.executeScript("arguments[0].value=arguments[1];", this.getLocationInput(), dataValue);
+		Thread.sleep(3000);
 		js.executeScript("arguments[0].click();", this.getSubmit());
 		
 	}
