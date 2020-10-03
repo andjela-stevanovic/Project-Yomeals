@@ -92,7 +92,6 @@ public class MealItemClass extends BasicTest{
 		FileInputStream fis = new FileInputStream(file);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		
-		FileOutputStream fos = new FileOutputStream(file);
 		XSSFSheet sheet1 = wb.getSheetAt(1);
 		
 		SoftAssert sa = new SoftAssert();

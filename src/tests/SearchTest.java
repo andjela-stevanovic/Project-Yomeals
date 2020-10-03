@@ -32,7 +32,6 @@ public class SearchTest extends BasicTest{
 		FileInputStream fis = new FileInputStream(file);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		
-		FileOutputStream fos = new FileOutputStream(file);
 		XSSFSheet sheet1 = wb.getSheetAt(0);
 		
 		SoftAssert sa = new SoftAssert();
