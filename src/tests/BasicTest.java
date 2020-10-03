@@ -57,6 +57,7 @@ public abstract class BasicTest {
 			FileHandler.copy(SrcFile, new File("Screenshots/" + fileSuffix + ".png"));
 		}
 		this.driver.manage().deleteAllCookies();
+		this.driver.navigate().refresh();
 	}
 	
 	@AfterClass
